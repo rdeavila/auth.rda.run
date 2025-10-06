@@ -1,4 +1,5 @@
 FROM alpine:3.22
+ENV POCKET_ID_VERSION=v1.13.0
 
 RUN apk add --no-cache rclone tini curl
 
@@ -6,7 +7,7 @@ WORKDIR /app
 RUN mkdir -p /app/data && \
     mkdir -p /root/.config/rclone
 
-RUN curl -sL -o pocket-id-linux-amd64 https://github.com/pocket-id/pocket-id/releases/latest/download/pocket-id-linux-amd64 && \
+RUN curl -sL -o pocket-id-linux-amd64 https://github.com/pocket-id/pocket-id/releases/${POCKET_ID_VERSION}/download/pocket-id-linux-amd64 && \
     chmod +x pocket-id-linux-amd64 && \
     mv pocket-id-linux-amd64 /usr/local/bin/pocket-id
 
