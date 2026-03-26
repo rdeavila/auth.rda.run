@@ -1,5 +1,5 @@
 FROM alpine:3.23.3
-ENV POCKET_ID_VERSION=v2.4.0
+ENV POCKET_ID_VERSION=v2.5.0
 
 RUN apk add --no-cache rclone tini curl
 
